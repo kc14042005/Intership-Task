@@ -1,0 +1,27 @@
+severity_rules:
+  - id: SEV-GENERIC
+    name: Generic Vulnerability Severity
+    base: 50
+    modifiers:
+      - condition: "event_outcome == 'success'"
+        add: 30
+      - condition: "dest_is_critical_asset == true"
+        add: 20
+    mapping:
+      0-39: Low
+      40-69: Medium
+      70-89: High
+      90-100: Critical
+
+  - id: SEV-CRITICAL-CVE
+    name: Critical CVE Exploitation
+    base: 80
+    modifiers:
+      - condition: "source_ip_reputation == 'malicious'"
+        add: 15
+    mapping:
+      0-39: Low
+      40-69: Medium
+      70-89: High
+      90-100: Critical
+

